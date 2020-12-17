@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const routes = require("./routes")
 const path = require("path");
 const PORT = process.env.PORT || 8080;
+require('dotenv').config({silent: true})
 const app = express();
 
 // Define middleware here
@@ -23,7 +24,7 @@ app.get("*", (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(process.env.ATLAS_URI || "mongodb://localhost/googlebooks", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.ATLAS_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Start Server
 app.listen(PORT, () => {
