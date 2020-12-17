@@ -1,10 +1,9 @@
 import axios from "axios";
 
-let searchTerm = "monster"
-const apiKey = "AIzaSyAioEUPbdpPWlE5exVbwgmXkux4SgTYMrw"
+const apiKey = "AIzaSyDevYNhD7v3aikDwuKFJdf4OKw2rKZmnUo"
 
 export default{
-  searchBooks: function() {
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=` + searchTerm + `&key=` + apiKey)
+  searchBooks: function(query) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=` + query + `&key=` + apiKey)
   }
 };
